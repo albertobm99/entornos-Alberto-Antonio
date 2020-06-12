@@ -33,30 +33,19 @@ public class Ventana extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         cmbMeses = new javax.swing.JComboBox<>();
-<<<<<<< HEAD
         lblMensaje = new javax.swing.JLabel();
-        btnDias = new javax.swing.JButton();
-=======
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
->>>>>>> 73d0e3fce759d5a6ad00dc29f76252dbc4313250
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Selecciona un mes:");
 
-        cmbMeses.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbMesesActionPerformed(evt);
+        cmbMeses.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbMesesItemStateChanged(evt);
             }
         });
 
-        btnDias.setText("Ver Dias");
-        btnDias.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDiasActionPerformed(evt);
-            }
-        });
+        lblMensaje.setText("jLabel2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -67,12 +56,7 @@ public class Ventana extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
-                    .addComponent(cmbMeses, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
-                    .addComponent(btnDias))
-=======
-                    .addComponent(jButton1))
->>>>>>> 73d0e3fce759d5a6ad00dc29f76252dbc4313250
+                    .addComponent(cmbMeses, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(96, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -84,21 +68,19 @@ public class Ventana extends javax.swing.JFrame {
                 .addComponent(cmbMeses, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lblMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(btnDias)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnDiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiasActionPerformed
-        
-    }//GEN-LAST:event_btnDiasActionPerformed
-
-    private void cmbMesesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMesesActionPerformed
+    private void cmbMesesItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbMesesItemStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_cmbMesesActionPerformed
+        if(evt.getSource()==cmbMeses){
+        String mesSeleccionado=(String)cmbMeses.getSelectedItem();
+        lblMensaje.setText(mesSeleccionado+ " tiene "+Year.getDiasMes(mesSeleccionado)+" días");
+}
+    }//GEN-LAST:event_cmbMesesItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -136,13 +118,7 @@ public class Ventana extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-<<<<<<< HEAD
-    private javax.swing.JButton btnDias;
     private javax.swing.JComboBox<String> cmbMeses;
-=======
-    private javax.swing.JComboBox<String> cmbMeses;
-    private javax.swing.JButton jButton1;
->>>>>>> 73d0e3fce759d5a6ad00dc29f76252dbc4313250
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblMensaje;
     // End of variables declaration//GEN-END:variables
